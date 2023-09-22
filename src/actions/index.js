@@ -16,6 +16,23 @@ export const act_buy_item = (product, quantity) =>{
      }
 }
 
+// Action cho chức năng xóa sản phẩm 
+export const act_delete_item = (product) =>{
+    return{
+        type:types.DELETE_ITEM,
+        product
+    }
+}
+
+// Action cho chức năng cập nhật giỏ hàng
+export const act_update_item = (product, quantity) =>{
+    return{
+        type:types.UPDATE_ITEM,
+        product, 
+        quantity
+    }
+}
+
 // Action cho chức năng thông báo 
 export const act_change_notify = (content) =>{
     return{

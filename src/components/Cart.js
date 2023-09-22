@@ -30,7 +30,7 @@ class Cart extends Component {
                             <tbody id="my-cart-body">
                                 {elementCartItem}
                             </tbody>
-                            <CartTotal />
+                            <CartTotal renderCarts={carts}/>
                         </table>
                     </div>
                 </div>
@@ -46,4 +46,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,null)(Cart)
+export default connect(mapStateToProps, null)(Cart)

@@ -51,9 +51,25 @@ const cart = (state = initState, action) => {
             console.log(state);
             return [...state];
         case UPDATE_ITEM:
-            break;
+            // Tìm sản phẩm cần sửa
+            index = getIndexByProduct(state, product);
+            if (index > 0) {
+                state[index].quantity = parseInt(quantity);
+
+            }
+            // Cập nhật lại localstorage
+            localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(state));
+            console.log(state);
+            return [...state];
         case DELETE_ITEM:
-            break;
+            index = getIndexByProduct(state, product);
+            if (index >= 0) {
+                state.splice(index, 1);
+            }
+            // Cập nhật lại localstorage
+            localStorage.setItem(LOCAL_STORAGE_NAME, JSON.stringify(state));
+            console.log(state);
+            return [...state];
         default:
             return state;
     }
